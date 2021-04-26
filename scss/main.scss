@@ -1,0 +1,181 @@
+:root {
+  --primary-color: rgba(147, 86, 220, 1);
+  --secondary-color: rgba(255, 121, 218, 1);
+  --tertiary-color: #99E2D0;
+  --main-font: 'Roboto';
+  --logo-font: 'Shrikhand';
+  --white-bg: #fff;
+  --med-gray-bg: rgb(230, 228, 228);
+  --dark-gray-bg: rgb(59, 59, 59);
+  --light-gray-bg: rgb(253, 251, 251);
+  --dark-contrast: #000;
+  --light-gray-contrast: rgb(119, 119, 119);
+  --light-gray-contrast: rgb(85, 85, 85);
+  --light-contrast: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 300px;
+  width: 100%;
+  margin: auto;
+  font-family: 'Roboto', 'Courier New', Courier, monospace;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.section__title {
+  font-size: 6vw;
+  margin-bottom: 25px;
+}
+
+.container {
+  padding: 35px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fas {
+  margin-right: 7px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  &__logo {
+    width: 100%;
+    background: var(--white-bg);
+    height: 3rem;
+    margin-top: 1rem;
+    -webkit-box-shadow: 0px 2px 7px -1px rgba(128, 128, 128, 0.38);
+    box-shadow: 0px 2px 7px -1px rgba(128, 128, 128, 0.38);
+  }
+  &__location {
+    color: var(--dark-gray-contrast);
+    width: 100%;
+    padding: 15px;
+    background: var(--med-gray-bg);
+    z-index: -1;
+  }
+  &__info {
+    width: 100%;
+    background: var(--light-gray-bg);
+    padding: 35px 45px;
+    & p {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+    }
+    & button {
+      background-color: var(--secondary-color);
+      margin-bottom: 25px;
+      border-radius: 3rem;
+      font-size: 1rem;
+      padding: 15px 25px;
+      color: var(--light-contrast);
+      background: rgb(147, 86, 220);
+      background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+      border: none;
+    }
+  }
+}
+
+.instruction {
+  & h2 {
+    margin: 20px 0;
+  }
+  & ul {
+    position: relative;
+  }
+  & li {
+    background-color: var(--light-gray-bg);
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    justify-content: center;
+    margin-top: 30px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    -webkit-box-shadow: 0px 4px 14px -2px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 4px 14px -2px rgba(0, 0, 0, 0.38);
+    .item__number {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--primary-color);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      color: var(--light-contrast);
+      position: absolute;
+      left: -15px;
+      font-weight: 100;
+    }
+    .fas {
+      margin: 0 15px 0 30px;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.footer {
+  background: var(--dark-gray-bg);
+  width: 100%;
+  color: rgba(255, 255, 255, 1);
+  &__logo {
+    font-family: var(--logo-font),'Courier New', Courier, monospace;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  & li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+}

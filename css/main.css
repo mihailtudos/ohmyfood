@@ -1,0 +1,193 @@
+:root {
+  --primary-color: rgba(147, 86, 220, 1);
+  --secondary-color: rgba(255, 121, 218, 1);
+  --tertiary-color: #99E2D0;
+  --main-font: 'Roboto';
+  --logo-font: 'Shrikhand';
+  --white-bg: #fff;
+  --med-gray-bg: rgb(230, 228, 228);
+  --dark-gray-bg: rgb(59, 59, 59);
+  --light-gray-bg: rgb(253, 251, 251);
+  --dark-contrast: #000;
+  --light-gray-contrast: rgb(119, 119, 119);
+  --light-gray-contrast: rgb(85, 85, 85);
+  --light-contrast: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-width: 300px;
+  width: 100%;
+  margin: auto;
+  font-family: 'Roboto', 'Courier New', Courier, monospace;
+}
+
+.app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section__title {
+  font-size: 6vw;
+  margin-bottom: 25px;
+}
+
+.container {
+  padding: 35px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fas {
+  margin-right: 7px;
+}
+
+.header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.header__logo {
+  width: 100%;
+  background: var(--white-bg);
+  height: 3rem;
+  margin-top: 1rem;
+  -webkit-box-shadow: 0px 2px 7px -1px rgba(128, 128, 128, 0.38);
+  box-shadow: 0px 2px 7px -1px rgba(128, 128, 128, 0.38);
+}
+
+.header__location {
+  color: var(--dark-gray-contrast);
+  width: 100%;
+  padding: 15px;
+  background: var(--med-gray-bg);
+  z-index: -1;
+}
+
+.header__info {
+  width: 100%;
+  background: var(--light-gray-bg);
+  padding: 35px 45px;
+}
+
+.header__info p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+}
+
+.header__info button {
+  background-color: var(--secondary-color);
+  margin-bottom: 25px;
+  border-radius: 3rem;
+  font-size: 1rem;
+  padding: 15px 25px;
+  color: var(--light-contrast);
+  background: #9356dc;
+  background: -webkit-gradient(linear, left bottom, left top, from(#9356dc), to(#ff79da));
+  background: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
+  border: none;
+}
+
+.instruction h2 {
+  margin: 20px 0;
+}
+
+.instruction ul {
+  position: relative;
+}
+
+.instruction li {
+  background-color: var(--light-gray-bg);
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  -webkit-box-shadow: 0px 4px 14px -2px rgba(0, 0, 0, 0.38);
+  box-shadow: 0px 4px 14px -2px rgba(0, 0, 0, 0.38);
+}
+
+.instruction li .item__number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--primary-color);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: var(--light-contrast);
+  position: absolute;
+  left: -15px;
+  font-weight: 100;
+}
+
+.instruction li .fas {
+  margin: 0 15px 0 30px;
+  font-size: 1.4rem;
+}
+
+.footer {
+  background: var(--dark-gray-bg);
+  width: 100%;
+  color: white;
+}
+
+.footer__logo {
+  font-family: var(--logo-font), "Courier New", Courier, monospace;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.footer li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Extra small devices (phones, 600px and down) */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
