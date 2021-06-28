@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./scss/dist/main.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,15 +20,16 @@
         <img src="./images/logo/ohmyfood@2x.svg" alt="">
       </div>
       <div class="header__menu">
-        <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="jay-wennington-N_Y88TWmGwA-unsplash">
+        <img src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="jay-wennington-N_Y88TWmGwA-unsplash">
       </div>
     </header>
     <section class="menu">
       <div class="container-fixed">
         <div class="menu__header">
-          <h1>The Full Pallete</h1>
+          <h1>Bastille</h1>
           <span class="liked">
-            <i class="far fa-heart"></i>
+            <i class="far fa-heart liked__not-filled"></i>
+            <i class="fas fa-heart liked__filled"></i>
           </span>
         </div>
         <!-- menu list start -->
@@ -37,34 +38,49 @@
           <div class="menu__list--divider"></div>
           <!-- menu item start -->
           <div class="menu__list--item">
+            <h3>Citrus Squid Carpaccio</h3>
             <div class="menu__list--item-info">
-              <h3>Escargot</h3>
-              <p>with southern French spices</p>
-            </div>
-            <div class="menu__list--item--price">
-              <h4>25€</h4>
+              <div>
+                <p>with orange zest</p>
+              </div>
+              <div class="menu__list--item-info-price">
+                <h4>25€</h4>
+              </div>
+              <div class="menu__list--item-info-hover">
+                <i class="fas fa-check-circle"></i>
+              </div>
             </div>
           </div>
           <!-- menu item start -->
           <!-- menu item start -->
           <div class="menu__list--item">
+            <h3>Grandmother's Vegetable Soup</h3>
             <div class="menu__list--item-info">
-              <h3>Duck Foie Gras </h3>
-              <p>with black truffle shavings</p>
-            </div>
-            <div class="menu__list--item--price">
-              <h4>35€</h4>
+              <div>
+                <p>Carrots, parships, Herusalem artichoke</p>
+              </div>
+              <div class="menu__list--item-info-price">
+                <h4>35€</h4>
+              </div>
+              <div class="menu__list--item-info-hover">
+                <i class="fas fa-check-circle"></i>
+              </div>
             </div>
           </div>
           <!-- menu item start -->
           <!-- menu item start -->
           <div class="menu__list--item">
+            <h3>Onion Soup</h3>
             <div class="menu__list--item-info">
-              <h3>Fried egg</h3>
-              <p>...</p>
-            </div>
-            <div class="menu__list--item--price">
-              <h4>20€</h4>
+              <div>
+                <p>Revisted</p>
+              </div>
+              <div class="menu__list--item-info-price">
+                <h4>20€</h4>
+              </div>
+              <div class="menu__list--item-info-hover">
+                <i class="fas fa-check-circle"></i>
+              </div>
             </div>
           </div>
           <!-- menu item start -->
@@ -76,34 +92,49 @@
           <div class="menu__list--divider"></div>
           <!-- manu item start -->
           <div class="menu__list--item">
+            <h3>Scallops</h3>
             <div class="menu__list--item-info">
-              <h3>Herb-Encrusted Steak </h3>
-              <p>with delicately sliced and seasoned veg...</p>
-            </div>
-            <div class="menu__list--item--price">
-              <h4>40€</h4>
+              <div>
+                <p>with mashed parship</p>
+              </div>
+              <div class="menu__list--item-info-price">
+                <h4>40€</h4>
+              </div>
+              <div class="menu__list--item-info-hover">
+                <i class="fas fa-check-circle"></i>
+              </div>
             </div>
           </div>
           <!-- manu item end -->
           <!-- manu item start -->
           <div class="menu__list--item">
+            <h3>Megret de canard</h3>
             <div class="menu__list--item-info">
-              <h3>Ox Tail Shepard's Pie </h3>
-              <p>with black truffle and pureed parsnips </p>
-            </div>
-            <div class="menu__list--item--price">
-              <h4>35€</h4>
+              <div>
+                <p>with mashed potatoes</p>
+              </div>
+              <div class="menu__list--item-info-price">
+                <h4>35€</h4>
+              </div>
+              <div class="menu__list--item-info-hover">
+                <i class="fas fa-check-circle"></i>
+              </div>
             </div>
           </div>
           <!-- manu item end -->
           <!-- manu item start -->
           <div class="menu__list--item">
+            <h3>Game Hen</h3>
             <div class="menu__list--item-info">
-              <h3>Filet of Sole </h3>
-              <p>with citrus dressing</p>
-            </div>
-            <div class="menu__list--item--price">
-              <h4>40€</h4>
+              <div>
+                <p>with vegetable gnocchis</p>
+              </div>
+              <div class="menu__list--item-info-price">
+                <h4>44€</h4>
+              </div>
+              <div class="menu__list--item-info-hover">
+                <i class="fas fa-check-circle"></i>
+              </div>
             </div>
           </div>
           <!-- manu item end -->
@@ -116,34 +147,49 @@
           <div class="menu__list--divider"></div>
           <!-- manu item start -->
           <div class="menu__list--item">
+            <h3>Floral Ice Cream </h3>
             <div class="menu__list--item-info">
-              <h3>Paris-Best </h3>
-              <p>Revisted</p>
-            </div>
-            <div class="menu__list--item--price">
-              <h4>18€</h4>
+              <div>
+                <p>with hazelnut butter</p>
+              </div>
+              <div class="menu__list--item-info-price">
+                <h4>18€</h4>
+              </div>
+              <div class="menu__list--item-info-hover">
+                <i class="fas fa-check-circle"></i>
+              </div>
             </div>
           </div>
           <!-- manu item end -->
           <!-- manu item start -->
           <div class="menu__list--item">
+            <h3>Chocolate Lava Cake </h3>
             <div class="menu__list--item-info">
-              <h3>Chocolate Macaroons </h3>
-              <p>With vanilla ice cream</p>
-            </div>
-            <div class="menu__list--item--price">
-              <h4>22€</h4>
+              <div>
+                <p>Revisited</p>
+              </div>
+              <div class="menu__list--item-info-price">
+                <h4>22€</h4>
+              </div>
+              <div class="menu__list--item-info-hover">
+                <i class="fas fa-check-circle"></i>
+              </div>
             </div>
           </div>
           <!-- manu item end -->
           <!-- manu item start -->
           <div class="menu__list--item">
+            <h3>Napolean </h3>
             <div class="menu__list--item-info">
-              <h3>Chocolate Mousse</h3>
-              <p>With spices and black truffles</p>
-            </div>
-            <div class="menu__list--item--price">
-              <h4>23€</h4>
+              <div>
+                <p>with blueberries and marzipan</p>
+              </div>
+              <div class="menu__list--item-info-price">
+                <h4>23€</h4>
+              </div>
+              <div class="menu__list--item-info-hover">
+                <i class="fas fa-check-circle"></i>
+              </div>
             </div>
           </div>
           <!-- manu item end -->

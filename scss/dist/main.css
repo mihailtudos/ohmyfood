@@ -10,8 +10,57 @@ body {
   width: 100%;
   margin: auto;
   font-family: "Roboto", "Courier New", Courier, monospace;
+  scroll-behavior: smooth;
 }
 
+#overlay {
+  position: fixed;
+  /* Sit on top of the page content */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  min-width: 300px;
+  max-width: 800px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+#overlay .spinner {
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -2;
+    display: none;
+  }
+}
 .app {
   display: flex;
   justify-content: center;
@@ -121,8 +170,9 @@ ul {
 }
 .header__menu img {
   width: 100%;
+  height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .instruction {
@@ -150,6 +200,7 @@ ul {
 .instruction li:hover {
   background: rgba(147, 86, 220, 0.2);
   transition: all 4ms;
+  cursor: pointer;
 }
 .instruction li:hover .fas {
   color: #9356dc;
@@ -230,10 +281,19 @@ ul {
 .restaurants .card__footer span {
   font-size: 2rem;
 }
+.restaurants .card__footer span .liked__filled {
+  display: none;
+}
 .restaurants .card__footer span:hover {
   background: -webkit-linear-gradient(#9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.restaurants .card__footer span:hover .liked__filled {
+  display: contents;
+}
+.restaurants .card__footer span:hover .liked__not-filled {
+  display: none;
 }
 
 .footer {
@@ -251,6 +311,18 @@ ul {
   font-size: 1rem;
 }
 
+.menu {
+  z-index: 2;
+}
+.menu div:nth-child(2) {
+  animation-delay: 1s;
+}
+.menu div:nth-child(3) {
+  animation-delay: 1.5s;
+}
+.menu div:nth-child(4) {
+  animation-delay: 2s;
+}
 .menu__header {
   display: flex;
   flex-direction: row;
@@ -264,13 +336,32 @@ ul {
 .menu__header .liked {
   font-size: 2rem;
 }
+.menu__header .liked .liked__filled {
+  display: none;
+}
 .menu__header .liked:hover {
   background: -webkit-linear-gradient(#9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.menu__header .liked:hover .liked__filled {
+  display: contents;
+}
+.menu__header .liked:hover .liked__not-filled {
+  display: none;
+}
 .menu__list {
   margin-bottom: 30px;
+  animation: fadeIn 1s linear;
+  animation-fill-mode: both;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .menu__list--title {
   text-transform: uppercase;
@@ -282,19 +373,91 @@ ul {
   width: 40px;
 }
 .menu__list--item {
+  position: relative;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
   background-color: #fff;
   border-radius: 1rem;
   margin: 15px 0;
   padding: 15px 10px;
+  overflow: hidden;
   -webkit-box-shadow: 0px 0px 3px 0px rgba(88, 88, 88, 0.2);
   box-shadow: 0px 0px 3px 0px rgba(88, 88, 88, 0.2);
 }
 .menu__list--item h3 {
   margin-bottom: 3px;
+}
+.menu__list--item-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menu__list--item-info-price {
+  width: 75px;
+  text-align: right;
+}
+.menu__list--item-info-hover {
+  background: #A9E0D1;
+  height: 100%;
+  width: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  display: none;
+  transition: width 0.5s;
+}
+.menu__list--item-info div:first-child {
+  overflow: hidden;
+}
+.menu__list--item-info div:first-child p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu__list--item-info div:last-child i {
+  animation: spinPicker 0.5s linear 1;
+}
+.menu__list--item-info div:last-child {
+  animation: showPicker 0.5s linear 1;
+  width: 75px;
+}
+.menu__list--item:hover {
+  cursor: pointer;
+}
+.menu__list--item:hover div:first-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu__list--item:hover div:nth-child(2) {
+  margin-right: 75px;
+  text-align: center;
+}
+.menu__list--item:hover div:last-child {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+@keyframes spinPicker {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes showPicker {
+  0% {
+    display: none;
+  }
+  100% {
+    display: flex;
+  }
 }
 .menu__order {
   width: 100%;

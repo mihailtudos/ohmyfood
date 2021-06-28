@@ -13,6 +13,60 @@ body {
   font-family: 'Roboto', 'Courier New', Courier, monospace;
 }
 
+#overlay {
+  position: fixed;
+  /* Sit on top of the page content */
+  display: inline;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  min-width: 300px;
+  max-width: 800px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  -webkit-animation: hideItem 0.2s linear ease;
+          animation: hideItem 0.2s linear ease;
+}
+
+@-webkit-keyframes hideItem {
+  0% {
+    display: none;
+  }
+  100% {
+    display: none;
+  }
+}
+
+@keyframes hideItem {
+  0% {
+    display: none;
+  }
+  100% {
+    display: none;
+  }
+}
+
 .app {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -499,3 +553,4 @@ ul {
     border-width: 1px;
   }
 }
+/*# sourceMappingURL=main.css.map */

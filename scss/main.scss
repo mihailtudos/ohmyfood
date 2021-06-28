@@ -13,6 +13,50 @@ body {
   width: 100%;
   margin: auto;
   font-family: 'Roboto', 'Courier New', Courier, monospace;
+  scroll-behavior: smooth;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  min-width: 300px;
+  max-width: $mobile;
+  width: 100%;
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  animation-name: pulse;
+  animation-duration: 2s; 
+  animation-timing-function: ease-out; 
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  & .spinner{
+    animation-name: pulse;
+    animation-duration: 3s; 
+    animation-timing-function: ease-out; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -2;
+    display: none;
+  }
 }
 
 .app {
@@ -71,7 +115,16 @@ ul {
 
 @mixin like-btn {
   font-size: 2rem;
+  .liked__filled {
+    display: none;
+  }
   &:hover {
+    .liked__filled {
+      display: contents;
+    }
+    .liked__not-filled {
+      display: none;
+    }
     background: -webkit-linear-gradient($primary-color, $secondary-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -85,6 +138,7 @@ ul {
   flex-direction: column;
   align-items: center;
   text-align: center;
+
   &__logo {
     width: 100%;
     background: $white-bg;
@@ -131,8 +185,9 @@ ul {
     z-index: -1;
     & img {
       width: 100%;
+      height: 100%;
       display: block;
-      object-fit: contain;
+      object-fit: cover;
     }
   }
 }
@@ -160,6 +215,7 @@ ul {
     &:hover {
       background: $primary-color__hover;
       transition: all 4ms;
+      cursor: pointer;
       .fas {
         color: $primary-color;
       }
@@ -259,6 +315,14 @@ ul {
 }
 
 .menu {
+  z-index: 2;
+  // Set delay per List Item
+  @for $i from 2 through $total-items {
+    div:nth-child(#{$i}) {
+      animation-delay: .50s * $i;
+    }
+  }
+
   &__header {
     display: flex;
     flex-direction: row;
@@ -274,6 +338,19 @@ ul {
   }
   &__list {
     margin-bottom: 30px;
+    animation: fadeIn 1s linear;
+    animation-fill-mode: both;
+
+    // Keyframe animation
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
     &--title {
       text-transform: uppercase;
       font-weight: 300;
@@ -284,22 +361,100 @@ ul {
       width: 40px;
     }
     &--item {
+      position: relative;
       display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
+      flex-direction: column;
       width: 100%;
       background-color: $white-bg;
       border-radius: 1rem;
       margin: 15px 0;
       padding: 15px 10px;
+      overflow: hidden;
       -webkit-box-shadow: 0px 0px 3px 0px rgba(88, 88, 88, 0.2);
       box-shadow: 0px 0px 3px 0px rgba(88, 88, 88, 0.2);
+      
       h3 {
         margin-bottom: 3px;
       }
+      &-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        &-price {
+          width: 75px;
+          text-align: right;
+        }
+
+        &-hover {
+          background: #A9E0D1;
+          height: 100%;
+          width: 0px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 2rem;
+          display: none;
+          transition: width .5s;
+        }
+        
+        div:first-child {
+          overflow: hidden;
+          p {
+            overflow: hidden;
+            white-space: nowrap; 
+            text-overflow: ellipsis;
+          }
+        }
+
+        div:last-child i {
+          animation: spinPicker .5s linear 1;
+        }
+        div:last-child {
+          animation: showPicker .5s linear 1;
+          width: 75px;
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        div:first-child {
+          white-space: nowrap; 
+          overflow: hidden;
+          text-overflow: ellipsis; 
+        }
+        div:nth-child(2) {
+          margin-right: 75px;
+          text-align: center;
+        }
+        div:last-child {
+          display: flex;
+          margin: 0;
+          padding: 0;
+        }
+
+        @keyframes spinPicker {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(-360deg);
+          }
+        }
+        @keyframes showPicker {
+          0% {
+            display: none;
+          }
+          100% {
+            display: flex;
+          }
+        }
+      }
     }
   }
-  &__order {
+  &__order{
     width: 100%;
     text-align: center;
     margin: 20px 0;
